@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 function Footer() {
@@ -16,10 +17,10 @@ function Footer() {
           <div className="footer-section">
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-yellow-400 transition">Home</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition">Shop</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition">Contact</a></li>
-              <li><a href="#" className="hover:text-yellow-400 transition">About</a></li>
+              <li><Link to="/" className="hover:text-yellow-400 transition">Home</Link></li>
+              <li><Link to="/store" className="hover:text-yellow-400 transition">Store</Link></li>
+              <li><Link to="/about" className="hover:text-yellow-400 transition">About</Link></li>
+              <li><Link to="/contact" className="hover:text-yellow-400 transition">Contact</Link></li>
             </ul>
           </div>
 

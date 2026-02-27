@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const CATEGORIES = [
   {name: "Football", img: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55" },
@@ -17,14 +18,16 @@ const Categories = () => {
           SHOP BY SPORT</h2>
         {CATEGORIES.map((e,idx) =>{
             return(
-             <div key={idx} className="relative group h-100 w-90 shadow-xl rounded-2xl overflow-hidden transition">
-                <div className="
-                h-full bg-cover bg-center group-hover:scale-110 ransition-transform duration-500
-                "style={{backgroundImage: `url(${e.img})`}}></div>
-                <div className="absolute inset-0 bg-black/40 flex items-end p-4">
-                    <h2 className='text-xl font-bold text-white uppercase tracking-wide'>{e.name}</h2>
+              <Link to={`/shop?category=${e.name}`}>
+                <div key={idx} className="relative group h-100 w-90 shadow-xl rounded-2xl overflow-hidden transition">
+                    <div className="
+                    h-full bg-cover bg-center group-hover:scale-110 ransition-transform duration-500
+                    "style={{backgroundImage: `url(${e.img})`}}></div>
+                    <div className="absolute inset-0 bg-black/40 flex items-end p-4">
+                        <h2 className='text-xl font-bold text-white uppercase tracking-wide'>{e.name}</h2>
+                    </div>
                 </div>
-            </div>
+              </Link>
             )
         })}    
      </section>
