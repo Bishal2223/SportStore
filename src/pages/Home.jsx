@@ -1,4 +1,14 @@
 import React from 'react'
+import Button from '../components/Button';
+
+const CATEGORIES = [
+  {  name: "Football", img: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55" },
+  {  name: "Basketball", img: "https://images.unsplash.com/photo-1546519638-68e109498ffc" },
+  {  name: "Volleyball", img: "https://images.unsplash.com/photo-1727461878184-b3f4f92a484e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dm9sbHliYWxsfGVufDB8fDB8fHww" },
+  {  name: "Badminton", img: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6" },
+  {  name: "Cricket", img: "https://images.unsplash.com/photo-1593766788306-28561086694e" },
+  {  name: "Tennis", img: "https://plus.unsplash.com/premium_photo-1666913667082-c1fecc45275d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dGVubmlzfGVufDB8fDB8fHww" },
+];
 
 const Home = () => {
   return (
@@ -19,9 +29,7 @@ const Home = () => {
             Discover premium sports equipment and apparel from the world's leading brands.
             <span> Your perfect gear awaits at unbeatable prices.</span>
           </p>
-          <button className='bg-yellow-500 text-white px-6 py-3 rounded-full font-medium cursor-pointer hover:scale-95'>
-            SHOP NOW
-          </button>
+          <Button/>
       </div>
     </section>
   )

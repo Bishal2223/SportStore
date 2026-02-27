@@ -12,9 +12,9 @@ const CATEGORIES = [
 const Categories = () => {
   return (
     <>
-    <h2 className="text-3xl text-yellow-500 font-black italic m-8 text-center hover:scale-110 transition">
+     <section className='flex justify-center items-center gap-10 flex-wrap m-9'>
+        <h2 className="w-full text-3xl text-yellow-500 font-black italic text-center hover:scale-110 transition">
           SHOP BY SPORT</h2>
-     <section className='flex justify-center items-center gap-10 flex-wrap'>
         {CATEGORIES.map((e,idx) =>{
             return(
              <div key={idx} className="relative group h-100 w-90 shadow-xl rounded-2xl overflow-hidden transition">
