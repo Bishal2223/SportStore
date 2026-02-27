@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Categories from './components/Categories'
 import PromoSec from './components/PromoSec'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Home/>
       <Categories/>
       <PromoSec/>
+      <Footer/>
     </div>
   )
 }
