@@ -18,7 +18,7 @@ function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/" className="hover:text-yellow-400 transition">Home</Link></li>
-              <li><Link to="/store" className="hover:text-yellow-400 transition">Store</Link></li>
+              <li><Link to="/shop" className="hover:text-yellow-400 transition">Shop</Link></li>
               <li><Link to="/about" className="hover:text-yellow-400 transition">About</Link></li>
               <li><Link to="/contact" className="hover:text-yellow-400 transition">Contact</Link></li>
             </ul>

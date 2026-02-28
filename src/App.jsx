@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Store from './pages/Store'
+import Shop from './pages/Shop'
 
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
             <Route path='/' element={<Home/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/contact' element={<Contact/>}/>
-            <Route path='/store' element={<Store/>}/>
+            <Route path='/shop' element={<Shop/>}/>
           </Routes>
         <Footer/>
       </Router>
