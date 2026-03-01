@@ -58,7 +58,7 @@ const Shop = () => {
           {CATEGORIES.map((e) => 
             <div
              onClick={() => setSelectedCategory(e)}
-             className={`px-6 py-2 rounded-2xl border transition
+             className={`cursor-pointer px-6 py-2 rounded-2xl border transition
               ${
                 selectedCategory === e
                   ? 'bg-yellow-500 border-yellow-500'
@@ -66,6 +66,11 @@ const Shop = () => {
               }`}>
              {e}
             </div>)}
+        </div>
+        {/* Search Bar */}
+        <div className="px-6 flex justify-end">
+          <input type="search" placeholder='Search here....'
+          className='w-full md:w-80 p-3 border-2 rounded-full focus:outline-yellow-400'/>
         </div>
   
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-6 lg:px-10 py-8 place-items-center">
