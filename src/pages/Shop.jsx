@@ -37,12 +37,12 @@ const PRODUCTS = [
   { id: 23, name: 'Tennis Grip Tape', price: 15, category: 'Tennis', img: 'https://images.unsplash.com/photo-1569597773059-6d747e5f8ed5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VGVubmlzJTIwR3JpcCUyMFRhcGV8ZW58MHx8MHx8fDA%3D', },
   { id: 24, name: 'Tennis Shoes', price: 160, category: 'Tennis', img: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff', },
 ];
-
+const CATEGORIES = ['All','Football','Basketball','Volleyball','Badminton','Cricket','Tennis',]
 const Shop = () => {
   return (
     <section className="w-full">
-      <div className="flex flex-col justify-center items-center gap-2 pt-16 pb-10 px-4 border-b border-gray-400">
-        <h2 className="font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide text-center">
+      <div className="flex flex-col justify-center items-center gap-2 pt-16 pb-10 px-4 border-b border-gray-400/70 bg-black">
+        <h2 className="text-yellow-500 font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wide text-center">
           Our Store
         </h2>
         <p className="text-gray-400 text-center max-w-xl">
@@ -50,7 +50,13 @@ const Shop = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-6 lg:px-10 py-12 place-items-center">
+      {/* Category-Section */}
+        <div className="flex flex-wrap gap-2 py-6 px-8">
+          <h2 className='w-full text-2xl font-bold'>Choose by Category</h2>
+          {CATEGORIES.map((e) => <div className='px-6 py-2 inset-0 bg-yellow-300/50 border border-yellow-300 rounded-2xl focus:bg-yellow-500'>{e}</div>)}
+        </div>
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-6 lg:px-10 py-8 place-items-center">
         {PRODUCTS.map((e) => (
           <div
             key={e.id}
