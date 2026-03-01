@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const PRODUCTS = [
   // FOOTBALL
@@ -39,6 +39,8 @@ const PRODUCTS = [
 ];
 const CATEGORIES = ['All','Football','Basketball','Volleyball','Badminton','Cricket','Tennis',]
 const Shop = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All')
+  const filteredProducts = selectedCategory === 'All'? PRODUCTS : PRODUCTS.filter((e) => e.category === selectedCategory)
   return (
     <section className="w-full">
       <div className="flex flex-col justify-center items-center gap-2 pt-16 pb-10 px-4 border-b border-gray-400/70 bg-black">
@@ -53,11 +55,21 @@ const Shop = () => {
       {/* Category-Section */}
         <div className="flex flex-wrap gap-2 py-6 px-8">
           <h2 className='w-full text-2xl font-bold'>Choose by Category</h2>
-          {CATEGORIES.map((e) => <div className='px-6 py-2 inset-0 bg-yellow-300/50 border border-yellow-300 rounded-2xl focus:bg-yellow-500'>{e}</div>)}
+          {CATEGORIES.map((e) => 
+            <div
+             onClick={() => setSelectedCategory(e)}
+             className={`px-6 py-2 rounded-2xl border transition
+              ${
+                selectedCategory === e
+                  ? 'bg-yellow-500 border-yellow-500'
+                  : 'bg-yellow-300/50 border-yellow-300'
+              }`}>
+             {e}
+            </div>)}
         </div>
-
+  
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-6 lg:px-10 py-8 place-items-center">
-        {PRODUCTS.map((e) => (
+        {filteredProducts.map((e) => (
           <div
             key={e.id}
             className="relative group w-full max-w-[240px] h-64 sm:h-72 md:h-80 shadow-xl rounded-2xl overflow-hidden"
