@@ -32,7 +32,7 @@ const Home = () => {
               Discover premium sports equipment and apparel from the world's leading brands.
               <span> Your perfect gear awaits at unbeatable prices.</span>
             </p>
-            <Button/>
+            <Button value="Shop Now"/>
         </div>
       </section>
       <Categories/>

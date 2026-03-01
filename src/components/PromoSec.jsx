@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom'
+import Button from './Button'
 
 const PromoSec = () => {
   return (
@@ -13,9 +14,7 @@ const PromoSec = () => {
               Get exclusive access to new arrivals, special offers, and expert training tips.
             </p>
             <Link to={'/shop'}>
-              <button to="/shop" className=" bg-white text-yellow-500 font-black px-6 py-3 rounded-full cursor-pointer hover:scale-95 transition text-lg sm:text-xl">
-                Explore Now
-              </button>
+              <Button value='Explore Now'/>
             </Link>
           </div>
         </div>
