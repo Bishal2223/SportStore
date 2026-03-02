@@ -40,7 +40,12 @@ const PRODUCTS = [
 const CATEGORIES = ['All','Football','Basketball','Volleyball','Badminton','Cricket','Tennis',]
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const filteredProducts = selectedCategory === 'All'? PRODUCTS : PRODUCTS.filter((e) => e.category === selectedCategory)
+  const [search, setSearch] = useState('')
+  const filteredProducts = PRODUCTS.filter((e) => {
+    const matchCategory = selectedCategory === 'All' || selectedCategory === e.category
+    const matchSearch = e.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    return matchCategory && matchSearch
+  })
   return (
     <section className="w-full">
       <div className="flex flex-col justify-center items-center gap-2 pt-16 pb-10 px-4 border-b border-gray-400/70 bg-black">
@@ -70,6 +75,7 @@ const Shop = () => {
         {/* Search Bar */}
         <div className="px-6 flex justify-end">
           <input type="search" placeholder='Search here....'
+          onChange={(e) => (setSearch(e.target.value))} value={search}
           className='w-full md:w-80 p-3 border-2 rounded-full focus:outline-yellow-400'/>
         </div>
   
