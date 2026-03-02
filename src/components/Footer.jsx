@@ -37,8 +37,8 @@ function Footer() {
           <div className="footer-section">
             <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
             <div className="flex space-x-2 text-xl">
-              <a href="#" aria-label="Facebook" className="hover:text-blue-600 transition"><FaFacebookF /></a>
-              <a href="#" aria-label="Instagram" className="hover:text-pink-500 transition"><FaInstagram /></a>
+              <a href="https://www.facebook.com/share/1Dz9BdExAA/" aria-label="Facebook" className="hover:text-blue-600 transition"><FaFacebookF /></a>
+              <a href="https://www.instagram.com/bishalchy402?igsh=Zm1sdDJwcW4zZ3Jq" aria-label="Instagram" className="hover:text-pink-500 transition"><FaInstagram /></a>
               <a href="#" aria-label="Twitter" className="hover:text-blue-400 transition"><FaTwitter /></a>
               <a href="#" aria-label="YouTube" className="hover:text-red-600 transition"><FaYoutube /></a>
             </div>

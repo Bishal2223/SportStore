@@ -14,7 +14,7 @@ const PromoSec = () => {
               Get exclusive access to new arrivals, special offers, and expert training tips.
             </p>
             <Link to={'/shop'}>
-              <Button value='Explore Now'/>
+              <Button value='Explore Store'/>
             </Link>
           </div>
         </div>

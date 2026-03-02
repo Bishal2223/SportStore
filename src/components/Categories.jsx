@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const CATEGORIES = [
   { name: "Football", img: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55" },
