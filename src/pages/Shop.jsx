@@ -79,21 +79,38 @@ const Shop = () => {
           className='w-full md:w-80 p-3 border-2 rounded-full focus:outline-yellow-400'/>
         </div>
   
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-6 lg:px-10 py-8 place-items-center">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-4 sm:px-6 lg:px-10 py-10 place-items-center">
         {filteredProducts.map((e) => (
           <div
             key={e.id}
-            className="relative group w-full max-w-[240px] h-64 sm:h-72 md:h-80 shadow-xl rounded-2xl overflow-hidden"
+            className="group relative w-full max-w-[250px] bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-yellow-100 hover:border-yellow-400"
           >
-            <div
-              className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-              style={{ backgroundImage: `url(${e.img})` }}
-            ></div>
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40 flex items-end p-4">
-              <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-wide">
+            <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
+              <img
+                src={e.img}
+                alt={e.name}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <span className="absolute top-3 left-3 bg-yellow-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow">
+                ${e.price}
+              </span>
+            </div>
+            <div className="p-4 space-y-2">
+              <h3 className="text-sm sm:text-base font-bold text-gray-800 line-clamp-2">
                 {e.name}
               </h3>
+
+              <p className="text-xs text-gray-500 uppercase tracking-wide">
+                {e.category}
+              </p>
+              <div className="flex gap-2 pt-2">
+                <button
+                  className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black text-sm font-semibold py-2 rounded-xl transition"
+                  onClick={() => addToCart(e)}
+                >
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         ))}

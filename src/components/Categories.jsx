@@ -16,19 +16,24 @@ const Categories = () => {
       <h2 className="text-2xl sm:text-3xl md:text-4xl text-yellow-500 font-black italic text-center mb-10">
         SHOP BY SPORT
       </h2>
-
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
         {CATEGORIES.map((e, idx) => (
-          <Link key={idx} to={`/shop?category=${e.name}`} className="group w-full">
-            <div className="relative h-64 w-full max-w-[240px] rounded-2xl overflow-hidden shadow-xl">
+          <Link
+            key={idx}
+            to={`/shop?category=${e.name}`}
+            className="group w-full flex justify-center">
+            <div className="relative h-64 w-full max-w-[240px] rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition">
               <div
-                className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url(${e.img})` }}
               ></div>
-              <div className="absolute inset-0 bg-black/40 flex items-end p-4">
-                <h3 className="text-lg font-bold text-white uppercase tracking-wide">
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition"></div>
+
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-base sm:text-lg font-bold text-white uppercase tracking-wide">
                   {e.name}
                 </h3>
+                <div className="mt-1 h-1 w-12 bg-yellow-400 rounded-full"></div>
               </div>
             </div>
           </Link>
