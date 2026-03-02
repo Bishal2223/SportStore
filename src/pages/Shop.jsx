@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useCart } from '../context/CartContext'
 
 const PRODUCTS = [
   // FOOTBALL
@@ -41,6 +42,7 @@ const PRODUCTS = [
 ];
 const CATEGORIES = ['All','Football','Basketball','Volleyball','Badminton','Cricket','Tennis',]
 const Shop = () => {
+  const { addToCart } = useCart()
   const [searchParams] = useSearchParams()
   const categoryFromURL = searchParams.get('category') || 'All'
   useEffect(() => {

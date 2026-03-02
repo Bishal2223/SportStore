@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const { cart } = useCart()
 
   return (
     <>
@@ -19,6 +21,16 @@ const Navbar = () => {
           <li className='hover:text-yellow-500'><Link to="/shop">Shop</Link></li>
           <li className='hover:text-yellow-500'><Link to="/contact">Contact</Link></li>
           <li className='hover:text-yellow-500'><Link to="/about">About</Link></li>
+          <li className=''>
+            <Link to="/cart" className="relative">
+              🛒
+              {cart.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-2 rounded-full">
+                  {cart.length}
+                </span>
+              )}
+            </Link>
+          </li>
         </ul>
         {/* Hamburger */}
         <div
@@ -45,6 +57,16 @@ const Navbar = () => {
           <li className='hover:text-yellow-500' onClick={() => setOpen(false)}><Link to="/shop">Shop</Link></li>
           <li className='hover:text-yellow-500' onClick={() => setOpen(false)}><Link to="/contact">Contact</Link></li>
           <li className='hover:text-yellow-500' onClick={() => setOpen(false)}><Link to="/about">About</Link></li>
+          <li className=''>
+            <Link to="/cart" className="relative">
+              🛒
+              {cart.length > 0 && (
+                <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-2 rounded-full">
+                  {cart.length}
+                </span>
+              )}
+            </Link>
+          </li>
         </ul>
       </div>
 
