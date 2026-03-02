@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 const PRODUCTS = [
   // FOOTBALL
@@ -39,7 +41,13 @@ const PRODUCTS = [
 ];
 const CATEGORIES = ['All','Football','Basketball','Volleyball','Badminton','Cricket','Tennis',]
 const Shop = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All')
+  const [searchParams] = useSearchParams()
+  const categoryFromURL = searchParams.get('category') || 'All'
+  useEffect(() => {
+    setSelectedCategory(categoryFromURL)
+  }, [categoryFromURL])
+
+  const [selectedCategory, setSelectedCategory] = useState(categoryFromURL)
   const [search, setSearch] = useState('')
   const filteredProducts = PRODUCTS.filter((e) => {
     const matchCategory = selectedCategory === 'All' || selectedCategory === e.category
