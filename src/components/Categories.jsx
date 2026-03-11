@@ -17,13 +17,13 @@ const Categories = () => {
       <h2 className="text-2xl sm:text-3xl md:text-4xl text-yellow-500 font-black italic text-center mb-10">
         SHOP BY SPORT
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 place-items-center">
+      <div className="grid sm:grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-6 place-items-center">
         {CATEGORIES.map((e, idx) => (
           <Link
             key={idx}
             to={`/shop?category=${e.name}`}
             className="group w-full flex justify-center">
-            <div className="relative h-64 w-full max-w-[240px] rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition">
+            <div className="relative h-64 w-full max-w-[340px] rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition">
               <div
                 className="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                 style={{ backgroundImage: `url(${e.img})` }}
