@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCart } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import Button from '../components/Button'
 
 const Cart = () => {
   const { cart, removeFromCart, updateQty, clearCart } = useCart()
@@ -25,7 +26,18 @@ const Cart = () => {
       <div className="grid md:grid-cols-3 gap-6">
         {/* Cart Items */}
         <div className="md:col-span-2 space-y-4">
-          {cart.map((item) => (
+          {cart.length === 0?(
+            <div className="text-center py-10">
+              <h2 className="text-2xl font-semibold mb-2">Your Cart is Empty 🛒</h2>
+              <p className="text-gray-500 mb-4">
+                Looks like you haven't added anything yet.
+              </p>
+
+              <Link to="/shop" className='border-2 border-yellow-500 py-5 rounded-full'>
+                <Button value="Goto Shopping"/>
+              </Link>
+            </div>
+          ): (cart.map((item) => (
             <div
               key={item.id}
               className="flex gap-4 bg-white p-4 rounded-xl shadow"
@@ -67,7 +79,7 @@ const Cart = () => {
                 ${(item.price * item.qty).toFixed(2)}
               </div>
             </div>
-          ))}
+          )))}
         </div>
 
         {/* Summary */}
@@ -89,13 +101,13 @@ const Cart = () => {
             <span>${subtotal.toFixed(2)}</span>
           </div>
 
-          <button className="w-full mt-6 bg-blue-600 text-white py-3 rounded-xl">
+          <button className="w-full mt-6 bg-yellow-400 text-white py-3 rounded-xl">
             Proceed to Checkout
           </button>
 
           <Link
             to="/shop"
-            className="block text-center text-blue-600 mt-4"
+            className="block text-center text-yellow-500 mt-4"
           >
             Continue Shopping
           </Link>
