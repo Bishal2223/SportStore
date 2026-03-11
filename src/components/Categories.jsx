@@ -15,7 +15,7 @@ const Categories = () => {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-10 py-14">
       <h2 className="text-2xl sm:text-3xl md:text-4xl text-yellow-500 font-black italic text-center mb-10">
-        SHOP BY SPORT
+        SHOP BY CATEGORY
       </h2>
       <div className="grid sm:grid-cols-1  md:grid-cols-3 lg:grid-cols-3 gap-6 place-items-center">
         {CATEGORIES.map((e, idx) => (
